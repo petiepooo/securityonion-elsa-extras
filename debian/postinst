@@ -2,8 +2,8 @@
 
 LOG="/var/log/securityonion-elsa-config.log"
 # Log Node vars
-MYSQL_ROOT_USER="root"
-MYSQL_PASS_SWITCH=""
+MYSQL_ROOT_USER="debian-sys-maint"
+MYSQL_PASS_SWITCH="-p`sed -n 's/^[ 	]*password *= *// p' /etc/mysql/debian.cnf 2>/dev/null | head -n 1`"
 MYSQL_NODE_DB="syslog"
 
 # Web Node vars
